@@ -70,6 +70,7 @@ Prompts:
 - Cases where the system overfits to one preference  
 - Ways the scoring might unintentionally favor some users  
 
+        There is a flaw in my tempo_bpm scale where there is an accidental hard filer. The numerical similarity fourmula that my program uses (1 - |x - y|) works only for features normalized between 0.0 and 1.0, but it breaks down for tempo_bpm because it ranges from around 60 to 160. Due to this, if the listener has a target tempo of 118 and the song in question has a tempo of 120, the formula used would be 1 - |120 - 118| = -1, which is normalized to 0.0. This means that any song that deviates by even 1 bpm is heavily penalized, unfairly punishing the song. 
 ---
 
 ## 7. Evaluation  
