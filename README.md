@@ -94,6 +94,7 @@ You can add more tests in `tests/test_recommender.py`.
 
 Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
 
+Starter Preferrences:
 ```
 Loading songs from data/songs.csv...
 Successfully loaded 18 songs.
@@ -141,6 +142,200 @@ Successfully loaded 18 songs.
     • song: 0.85) (+1.90)
 
 ==================================================
+```
+
+Oxymoron Preferrences:
+```
+Loading songs from data/songs.csv...
+Successfully loaded 18 songs.
+==================================================
+🎵 TOP RECOMMENDATIONS FOR YOU 🎵
+==================================================
+
+1. Hollow Crown by Iron Citadel
+   Score: 5.90 / 10.0
+   Genre: Metal | Mood: Aggressive
+   --- Match Breakdown ---
+    • genre match (metal) (+2.0)
+    • energy similarity (target: 0.95
+    • song: 0.98) (+1.94)
+    • valence similarity (target: 0.2
+    • song: 0.22) (+1.96)
+
+2. Midnight Velvet by Blue Note Trio
+   Score: 3.58 / 10.0
+   Genre: Blues | Mood: Melancholic
+   --- Match Breakdown ---
+    • mood match (melancholic) (+1.0)
+    • energy similarity (target: 0.95
+    • song: 0.32) (+0.74)
+    • valence similarity (target: 0.2
+    • song: 0.28) (+1.84)
+
+3. Vivaldi Storm by Baroque Ensemble
+   Score: 3.50 / 10.0
+   Genre: Classical | Mood: Dramatic
+   --- Match Breakdown ---
+    • energy similarity (target: 0.95
+    • song: 0.85) (+1.80)
+    • valence similarity (target: 0.2
+    • song: 0.35) (+1.70)
+
+4. Cyber Horizon by Neon Runner
+   Score: 3.42 / 10.0
+   Genre: Cyberpunk | Mood: Gritty
+   --- Match Breakdown ---
+    • energy similarity (target: 0.95
+    • song: 0.88) (+1.86)
+    • valence similarity (target: 0.2
+    • song: 0.42) (+1.56)
+
+5. Storm Runner by Voltline
+   Score: 3.36 / 10.0
+   Genre: Rock | Mood: Intense
+   --- Match Breakdown ---
+    • energy similarity (target: 0.95
+    • song: 0.91) (+1.92)
+    • valence similarity (target: 0.2
+    • song: 0.48) (+1.44)
+
+==================================================
+```
+
+Mismatch Preferrences:
+```
+Loading songs from data/songs.csv...
+Successfully loaded 18 songs.
+==================================================
+🎵 TOP RECOMMENDATIONS FOR YOU 🎵
+==================================================
+
+1. Vivaldi Storm by Baroque Ensemble
+   Score: 4.90 / 10.0
+   Genre: Classical | Mood: Dramatic
+   --- Match Breakdown ---
+    • genre match (classical) (+2.0)
+    • energy similarity (target: 0.95
+    • song: 0.85) (+1.80)
+    • danceability similarity (target: 0.9
+    • song: 0.45) (+1.10)
+
+2. Sunrise City by Neon Echo
+   Score: 4.52 / 10.0
+   Genre: Pop | Mood: Happy
+   --- Match Breakdown ---
+    • mood match (happy) (+1.0)
+    • energy similarity (target: 0.95
+    • song: 0.82) (+1.74)
+    • danceability similarity (target: 0.9
+    • song: 0.79) (+1.78)
+
+3. Rooftop Lights by Indigo Parade
+   Score: 4.46 / 10.0
+   Genre: Indie Pop | Mood: Happy
+   --- Match Breakdown ---
+    • mood match (happy) (+1.0)
+    • energy similarity (target: 0.95
+    • song: 0.76) (+1.62)
+    • danceability similarity (target: 0.9
+    • song: 0.82) (+1.84)
+
+4. Electric Pulse by Vortex Club
+   Score: 3.98 / 10.0
+   Genre: House | Mood: Euphoric
+   --- Match Breakdown ---
+    • energy similarity (target: 0.95
+    • song: 0.95) (+2.00)
+    • danceability similarity (target: 0.9
+    • song: 0.91) (+1.98)
+
+5. Gym Hero by Max Pulse
+   Score: 3.92 / 10.0
+   Genre: Pop | Mood: Intense
+   --- Match Breakdown ---
+    • energy similarity (target: 0.95
+    • song: 0.93) (+1.96)
+    • danceability similarity (target: 0.9
+    • song: 0.88) (+1.96)
+
+==================================================
+```
+
+Boundary Preferrences:
+```
+Loading songs from data/songs.csv...
+Successfully loaded 18 songs.
+==================================================
+🎵 TOP RECOMMENDATIONS FOR YOU 🎵
+==================================================
+
+1. Starlight Reverie by Astral Projection
+   Score: 5.96 / 10.0
+   Genre: Ambient | Mood: Dreamy
+   --- Match Breakdown ---
+    • energy similarity (target: 0.0
+    • song: 0.2) (+1.60)
+    • valence similarity (target: 0.0
+    • song: 0.5) (+1.00)
+    • danceability similarity (target: 0.0
+    • song: 0.3) (+1.40)
+    • acousticness similarity (target: 1.0
+    • song: 0.98) (+1.96)
+
+2. Midnight Velvet by Blue Note Trio
+   Score: 5.50 / 10.0
+   Genre: Blues | Mood: Melancholic
+   --- Match Breakdown ---
+    • energy similarity (target: 0.0
+    • song: 0.32) (+1.36)
+    • valence similarity (target: 0.0
+    • song: 0.28) (+1.44)
+    • danceability similarity (target: 0.0
+    • song: 0.5) (+1.00)
+    • acousticness similarity (target: 1.0
+    • song: 0.85) (+1.70)
+
+3. Spacewalk Thoughts by Orbit Bloom
+   Score: 5.16 / 10.0
+   Genre: Ambient | Mood: Chill
+   --- Match Breakdown ---
+    • energy similarity (target: 0.0
+    • song: 0.28) (+1.44)
+    • valence similarity (target: 0.0
+    • song: 0.65) (+0.70)
+    • danceability similarity (target: 0.0
+    • song: 0.41) (+1.18)
+    • acousticness similarity (target: 1.0
+    • song: 0.92) (+1.84)
+
+4. Library Rain by Paper Lanterns
+   Score: 4.66 / 10.0
+   Genre: Lofi | Mood: Chill
+   --- Match Breakdown ---
+    • energy similarity (target: 0.0
+    • song: 0.35) (+1.30)
+    • valence similarity (target: 0.0
+    • song: 0.6) (+0.80)
+    • danceability similarity (target: 0.0
+    • song: 0.58) (+0.84)
+    • acousticness similarity (target: 1.0
+    • song: 0.86) (+1.72)
+
+5. Vivaldi Storm by Baroque Ensemble
+   Score: 4.60 / 10.0
+   Genre: Classical | Mood: Dramatic
+   --- Match Breakdown ---
+    • energy similarity (target: 0.0
+    • song: 0.85) (+0.30)
+    • valence similarity (target: 0.0
+    • song: 0.35) (+1.30)
+    • danceability similarity (target: 0.0
+    • song: 0.45) (+1.10)
+    • acousticness similarity (target: 1.0
+    • song: 0.95) (+1.90)
+
+==================================================
+
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
