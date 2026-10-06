@@ -116,6 +116,49 @@ def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
 
     return score, reasons
 
+'''
+# Weight shift score_song function
+def score_song(user_prefs: Dict, song: Dict) -> Tuple[float, List[str]]:
+    """
+    Scores a single song with modified weights: 
+    - Genre match bonus halved (+1.0)
+    - Energy feature weight doubled (x4.0 instead of x2.0)
+    """
+    score = 0.0
+    reasons = []
+
+    # 1. Categorical Match: Genre (+1.0 point - halved from 2.0)
+    if "genre" in user_prefs and song.get("genre", "").lower() == user_prefs["genre"].lower():
+        score += 1.0
+        reasons.append(f"genre match ({song['genre']}) (+1.0)")
+
+    # 2. Categorical Match: Mood (+1.0 point - unchanged)
+    if "mood" in user_prefs and song.get("mood", "").lower() == user_prefs["mood"].lower():
+        score += 1.0
+        reasons.append(f"mood match ({song['mood']}) (+1.0)")
+
+    # 3. Numerical Audio Features with Custom Energy Weighting
+    numerical_features = ["energy", "valence", "danceability", "acousticness", "tempo_bpm"]
+    
+    for feature in numerical_features:
+        if feature in user_prefs:
+            x = song.get(feature, 0.0)
+            y = user_prefs[feature]
+            
+            # Distance formula calculation (bounded between 0 and 1)
+            similarity = 1.0 - abs(x - y)
+            similarity = max(0.0, min(1.0, similarity))
+            
+            # Sensitivity adjustment: Double weight for energy (max 4.0), standard for others (max 2.0)
+            multiplier = 4.0 if feature == "energy" else 2.0
+            feature_points = similarity * multiplier
+            score += feature_points
+            
+            reasons.append(f"{feature} similarity (target: {y}, song: {x}) (+{feature_points:.2f})")
+
+    return score, reasons
+'''
+    
 def recommend_songs(user_prefs: Dict, songs: List[Dict], k: int = 5) -> List[Tuple[Dict, float, str]]:
     """
     Functional implementation of the recommendation logic.
